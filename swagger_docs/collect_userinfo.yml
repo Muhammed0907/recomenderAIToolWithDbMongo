@@ -1,0 +1,28 @@
+tags:
+  - User
+summary: Update User History
+description: Adds a new history by selected data to the logged-in user's history.
+parameters:
+  - in: query
+    name: select
+    required: true
+    type: string
+    description: select user history by (search,clicked_tool).
+  - in: body
+    name: info_term
+    required: true
+    schema:
+      type: object
+      properties:
+        info:
+          type: string
+          description: The adds history user's profile
+responses:
+  200:
+    description: User history updated successfully
+  400:
+    description: Bad request -  selected not provided
+  401:
+    description: Unauthorized - User not logged in
+  404:
+    description: User not found

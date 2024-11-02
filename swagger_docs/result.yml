@@ -1,0 +1,18 @@
+summary: Check Training Status
+description: Returns the current status of the model training.
+tags: 
+  - Train
+responses:
+  200:
+    description: Status of the training
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+        current_instance:
+          type: integer
+        total_instances:
+          type: integer
+  404:
+    description: Training not started

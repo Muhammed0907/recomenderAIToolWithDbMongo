@@ -1,0 +1,28 @@
+# swagger_docs/login.yml
+summary: User login
+description: Authenticate user by ID and name. Returns a cookie on successful login.
+tags: 
+  - User
+parameters:
+  - name: body
+    in: body
+    required: true
+    schema:
+      type: object
+      properties:
+        user_id:
+          type: string
+          example: "123"
+        user_name:
+          type: string
+          example: "JohnDoe"
+      required:
+        - user_id
+        - user_name
+responses:
+  200:
+    description: Login successful
+  404:
+    description: User not found
+  400:
+    description: User ID and user name are required

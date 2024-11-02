@@ -1,0 +1,9 @@
+summary: Start Model Training
+description: Starts the model training process on server request.
+tags: 
+  - Train
+responses:
+  200:
+    description: Training started successfully
+  500:
+    description: Internal server error - Unable to start training

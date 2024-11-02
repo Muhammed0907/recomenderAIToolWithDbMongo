@@ -1,0 +1,26 @@
+summary: Retrieve User Profile
+description: Get the full profile information of the logged-in user.
+tags: 
+  - User
+responses:
+  200:
+    description: User profile retrieved successfully
+    schema:
+      type: object
+      properties:
+        user_id:
+          type: string
+        user_name:
+          type: string
+        searched_history:
+          type: array
+          items:
+            type: string
+        click_history:
+          type: array
+          items:
+            type: string
+  401:
+    description: Unauthorized - User not logged in
+  404:
+    description: User profile not found

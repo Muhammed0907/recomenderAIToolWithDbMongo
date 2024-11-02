@@ -1,0 +1,47 @@
+summary: Add new AI tools to the model
+description: Adds new tools and their descriptions to the existing trained model by generating embeddings and appending them to the FAISS index.
+tags: 
+  - Train
+parameters:
+  - in: body
+    name: body
+    description: List of tools and their descriptions to be added to the model
+    required: true
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          tool:
+            type: string
+            description: The name of the AI tool
+            example: "AI Tool 1"
+          description:
+            type: string
+            description: A brief description of the tool
+            example: "This tool helps with image recognition."
+responses:
+  200:
+    description: New data added successfully to the model
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          example: "New data added successfully to the model."
+  400:
+    description: Bad Request - Invalid data format or missing fields
+    schema:
+      type: object
+      properties:
+        error:
+          type: string
+          example: "Invalid data format. Expected a list of tools with descriptions."
+  500:
+    description: Internal Server Error - Failed to add data to the model
+    schema:
+      type: object
+      properties:
+        error:
+          type: string
+          example: "Failed to add new data to model: <error details>"

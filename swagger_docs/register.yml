@@ -1,0 +1,37 @@
+summary: Register a New User
+description: Register a new user in the system with a unique user ID and user name.
+tags: 
+  - User
+parameters:
+  - name: body
+    in: body
+    required: true
+    schema:
+      type: object
+      properties:
+        user_id:
+          type: string
+          description: Unique identifier for the user.
+          example: "12345"
+        user_name:
+          type: string
+          description: Name of the user.
+          example: "JohnDoe"
+      required:
+        - user_id
+        - user_name
+responses:
+  201:
+    description: User registered successfully
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            message:
+              type: string
+              example: "Registration successful"
+  400:
+    description: Bad request - Missing user_id or user_name
+  409:
+    description: Conflict - User already exists
