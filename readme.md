@@ -3,6 +3,8 @@
 ## Run Demo 
 **Note: Run Mysql and MongoDb servers**
 
+**Note: Change config file in config/config.toml**
+
 **Note: Install packages**
 -       pip install -r requirements.txt
 -       python app.py
